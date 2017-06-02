@@ -1,0 +1,9 @@
+{
+  "name": "subl",
+  "version": "1.0.0",
+  "description": "Sublime Text Packages",
+  "main": "index.js",
+  "repository": "git@github.com:edonet/subl.git",
+  "author": "edoner <edonet@163.com>",
+  "license": "MIT"
+}
