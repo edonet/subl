@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "Sublime Text Packages",
   "main": "index.js",
+  "bin": {
+    "subt": "./scripts/start.js"
+  },
   "repository": "git@github.com:edonet/subl.git",
   "author": "edoner <edonet@163.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "edoner": "^1.0.0"
+  }
 }
