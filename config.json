@@ -3,5 +3,6 @@
         "Settings"
     ],
     "packageFolder": "/Users/lifx/Library/Application Support/Sublime Text 3/Packages",
-    "sessionPath": "/Users/lifx/Library/Application Support/Sublime Text 3/Local/Session.sublime_session"
+    "sessionPath": "/Users/lifx/Library/Application Support/Sublime Text 3/Local/Session.sublime_session",
+    "commandPath": "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
 }

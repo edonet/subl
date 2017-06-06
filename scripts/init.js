@@ -1,11 +1,21 @@
 'use strict';
 
 
+/*
+ **************************************
+ * 加载依赖
+ **************************************
+ */
 const
     argv = process.argv[2],
     util = require('edoner');
 
 
+/*
+ **************************************
+ * 定义启动函数
+ **************************************
+ */
 async function start() {
     let src = util.usedir(__dirname, '../'),
         dist = util.usedir(argv),
@@ -27,10 +37,16 @@ async function start() {
 
     config.packageFolder = argv;
     config.sessionPath = util.cwd(argv, '../Local', 'Session.sublime_session');
+    config.commandPath = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl';
     await util.json(configDir, config);
 
     console.log('Oo, command has finished!');
 }
 
 
+/*
+ **************************************
+ * 执行启动函数
+ **************************************
+ */
 argv && start().catch(err => console.error(err));

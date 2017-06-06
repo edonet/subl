@@ -37,9 +37,15 @@ def plugin_loaded():
     if 'recent_workspaces' in data:
         data = data['recent_workspaces']
 
+        print(data)
+
         # 格式化数据
         for x in data:
             projects.append(format_project(x))
+
+
+    # 打印项目列表
+    print(projects)
 
 
 
@@ -101,14 +107,8 @@ def add_project(fpath):
 
     except:
 
-        print(fpath)
-
-        print(projects)
-
         # 添加项目
         projects.insert(0, format_project(fpath))
-
-        print(projects)
 
 
 
