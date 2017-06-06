@@ -29,7 +29,7 @@ async function start() {
     }
 
 
-    // 执行参数
+    // 执行参数命令
     if (args.length) {
         return conf.commandPath ?
             await util.exec([`"${conf.commandPath}"`, ...args].join(' ')) :
@@ -42,24 +42,28 @@ async function start() {
         return await util.exec('open "/Applications/Sublime Text.app"');
     }
 
+    // 获取【session】
     let session = await util.json(conf.sessionPath),
         workspaces = session.workspaces;
 
 
+    // 获取最近项目
     if (workspaces && workspaces.recent_workspaces) {
         let res = {};
 
+        // 过滤最近项目
         for (let x of workspaces.recent_workspaces) {
             if (!res[x] && await util.stat(x)) {
                 res[x] = true;
             }
         }
 
+        // 写入最近项目
         session['workspaces']['recent_workspaces'] = Object.keys(res);
         await util.json(conf.sessionPath, session);
     }
 
-
+    // 启动程序
     await util.exec('open "/Applications/Sublime Text.app"');
 }
 
@@ -70,4 +74,4 @@ async function start() {
  * 抛出接口
  **************************************
  */
-module.exports = start();
+module.exports = start().catch(err => console.error(err));

@@ -23,6 +23,7 @@ async function start() {
         config = await util.json(configDir);
 
 
+    // 添加包文件
     if (config.packages && config.packages.length) {
         await Promise.all(config.packages.map(pkg => {
             let srcDir = src(pkg),
@@ -35,11 +36,13 @@ async function start() {
     }
 
 
+    // 添加配置项
     config.packageFolder = argv;
     config.sessionPath = util.cwd(argv, '../Local', 'Session.sublime_session');
     config.commandPath = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl';
-    await util.json(configDir, config);
 
+    // 写入配置
+    await util.json(configDir, config);
     console.log('Oo, command has finished!');
 }
 
