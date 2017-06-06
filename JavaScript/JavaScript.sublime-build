@@ -1,0 +1,38 @@
+{
+    "cmd": ["node", "--use-strict", "$file"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.js",
+    "shell": true,
+    "encoding": "utf-8",
+
+    "windows": {
+        "cmd": ["taskkill", "/F", "/IM", "node.exe", "&", "node", "$file"]
+    },
+
+    "linux": {
+        "cmd": ["killall node; node", "$file"]
+    },
+
+    "osx": {
+        "cmd": ["killall node; node $file"]
+    },
+
+    "variants": [
+        {
+            "name": "Run",
+            "shell": true,
+
+            "windows": {
+                "cmd": ["node --use-strict $file"]
+            },
+
+            "linux": {
+                "cmd": ["node --use-strict $file"]
+            },
+
+            "osx": {
+                "cmd": ["node --use-strict $file"]
+            }
+        }
+    ]
+}

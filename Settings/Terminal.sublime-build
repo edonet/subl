@@ -1,0 +1,60 @@
+{
+    "shell": true,
+
+    "osx": {
+        "cmd": ["terminal"]
+    },
+
+    "variants": [
+
+        // List
+        {
+            "name": "List",
+            "cmd": "ls -al",
+            "shell": true,
+
+            "windows": {
+                "cmd": ["dir"]
+            }
+        },
+
+        // Kill all node process
+        {
+            "name": "Killall Node",
+            "shell": true,
+
+            "windows": {
+                "cmd": ["taskkill", "/F", "/IM", "node.exe"]
+            },
+
+            "linux": {
+                "cmd": ["killall node"]
+            },
+
+            "osx": {
+                "cmd": ["killall node"],
+            }
+        },
+
+        // Webpack
+        {
+            "name": "Webpack",
+            "shell": true,
+
+            "osx": {
+                "cmd": ["dist --config=$file"]
+            }
+        },
+
+        // Server
+        {
+            "name": "Server",
+            "shell": true,
+            "working_dir": "${file_path:${folder}}",
+
+            "osx": {
+                "cmd": ["server $file_path"]
+            }
+        }
+    ]
+}

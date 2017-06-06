@@ -1,0 +1,26 @@
+{
+    "cmd": ["server", "-m", "md", "-p", "$file"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "text.html.markdown",
+    "shell": true,
+    "encoding": "utf-8",
+
+    "variants": [
+        {
+            "name": "Exit",
+            "shell": true,
+
+            "windows": {
+                "cmd": ["taskkill", "/F", "/IM", "node.exe"]
+            },
+
+            "linux": {
+                "cmd": ["killall node"]
+            },
+
+            "osx": {
+                "cmd": ["killall node"]
+            }
+        }
+    ]
+}

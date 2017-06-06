@@ -1,0 +1,48 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+    "atomic_save": false,
+    "auto_complete_triggers": [
+        {
+            "characters": "< ",
+            "selector": "text.html, text.svg"
+        },
+        {
+            "characters": "@: ",
+            "selector": "source.css, source.sass, source.scss"
+        },
+    ],
+    "default_line_ending": "unix",
+    "ensure_newline_at_eof_on_save": true,
+    "fade_fold_buttons":  false,
+    "font_size":  16,
+    "file_exclude_patterns": [
+        "*.lock",
+        "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib",
+        "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db",
+        "*.sublime-workspace"
+    ],
+    "folder_exclude_patterns": [
+        "node_modules",
+        ".git", ".svn", ".bin", ".idea", ".*-cache", ".hg", "CVS"
+    ],
+    "highlight_line":  true,
+    "highlight_modified_tabs":  true,
+    "line_padding_bottom":  1,
+    "line_padding_top":  1,
+    "margin": 10,
+    "open_files_in_new_window": false,
+    "create_window_at_startup": false,
+    "rulers":  [ 100 ],
+    "remember_full_screen": true,
+    "remember_open_files": true,
+    "save_on_focus_lost":  true,
+    "scroll_past_end": false,
+    "show_encoding": true,
+    "show_line_endings": true,
+    "spell_check": false,
+    "tab_size":  4,
+    "translate_tabs_to_spaces":  true,
+    "trim_trailing_white_space_on_save": true,
+    "use_simple_full_screen": false
+}

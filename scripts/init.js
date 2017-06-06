@@ -43,7 +43,7 @@ async function start() {
 
     // 写入配置
     await util.json(configDir, config);
-    console.log('Oo, command has finished!');
+    console.log('Packages install successfully!');
 }
 
 
