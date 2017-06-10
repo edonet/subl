@@ -155,8 +155,13 @@ class SwitchWorkspaceCommand(sublime_plugin.WindowCommand):
 
         # 选择的不是当前项目时执行
         if fpath != self.current_project:
-            self.window.run_command('close_workspace')
+
+            # self.window.run_command('subl', { 'args': ['--project', fpath] })
+            # sublime.set_timeout(lambda: self.window.run_command("close_window"), 10)
+
+            self.window.run_command('close_window')
             self.window.run_command('open_recent_project_or_workspace', { 'index': index })
+
             projects.insert(0, projects.pop(index))
 
 
