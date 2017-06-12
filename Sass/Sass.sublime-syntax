@@ -287,10 +287,10 @@ contexts:
       scope: keyword.control.sass
 
   type-unquoted-string:
-    - match: '(?<=[\s\(])[\w\.\-\/]+'
+    - match: '(?<=[\s\(\}])[\w\.\-\/][\w\.\-\/\?\&\=]*'
       scope: string.unquoted.sass
       push:
-        - match: '[\w\.\-\/]*(?=[\s\)\;])'
+        - match: '[\w\.\-\/]*(?=[\s\)\:\;])'
           scope: string.unquoted.sass
           pop: true
         - include: type-paramter-decode
